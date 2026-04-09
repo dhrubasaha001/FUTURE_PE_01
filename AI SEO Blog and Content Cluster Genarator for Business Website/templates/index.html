@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI SEO Blog Pack Generator</title>
+    <!-- Use Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Ionicons for some icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <ion-icon name="analytics-outline"></ion-icon>
+                <h1>SEO<span>Gen</span></h1>
+            </div>
+            <p>AI-Powered Blog & Content Cluster Generator for Businesses</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Left Side: Input Form -->
+            <section class="form-section glass-card">
+                <h2>Campaign Details</h2>
+                <form id="seoForm">
+                    <div class="input-group">
+                        <label for="topic">Main Topic / Keyword</label>
+                        <input type="text" id="topic" placeholder="e.g. Emergency Plumbing Repair" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="businessName">Business Name</label>
+                        <input type="text" id="businessName" placeholder="e.g. Joe's Plumbers" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="location">Target Location / City</label>
+                        <input type="text" id="location" placeholder="e.g. Austin, TX" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="targetAudience">Target Audience</label>
+                        <input type="text" id="targetAudience" placeholder="e.g. Homeowners needing urgent repairs" required>
+                    </div>
+
+                    <button type="submit" class="primary-btn" id="generateBtn">
+                        <ion-icon name="sparkles-outline"></ion-icon> Generate SEO Pack
+                    </button>
+                </form>
+            </section>
+
+            <!-- Right Side: Results -->
+            <section class="results-section glass-card" id="resultsSection" style="display: none;">
+                
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="outline">Outline</button>
+                    <button class="tab-btn" data-tab="blog">Blog</button>
+                    <button class="tab-btn" data-tab="cluster">Content Cluster</button>
+                    <button class="tab-btn" data-tab="local">Local SEO</button>
+                </div>
+
+                <div class="tab-content">
+                    <div id="outline" class="tab-pane active"></div>
+                    <div id="blog" class="tab-pane"></div>
+                    <div id="cluster" class="tab-pane"></div>
+                    <div id="local" class="tab-pane"></div>
+                </div>
+
+            </section>
+
+            <!-- Loading overlay -->
+            <div id="loader" class="loader-container" style="display: none;">
+                <div class="spinner"></div>
+                <p>Generating SEO pack using AI...</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
