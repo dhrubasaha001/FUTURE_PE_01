@@ -154,13 +154,13 @@ Follow these steps to set up any of the projects locally:
 2. **Navigate to the desired project**
    ```bash
    # For UGC Ads project
-   cd Task-1-AI-Content-Marketing-UGC-Ads
+   cd AI-Content-Marketing-UGC-Ads
 
    # OR for SEO Blog Generator
-   cd Task-2-AI-SEO-Blog-Content-Cluster-Generator
+   cd AI-SEO-Blog-Content-Cluster-Generator
 
    # OR for Website Copy Generator
-   cd Task-3-AI-Website-Copy-Generator-Local-Business
+   cd AI-Website-Copy-Generator-Local-Business
    ```
 
 3. **Create a virtual environment** (recommended)
