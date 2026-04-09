@@ -314,8 +314,8 @@ This project is created as part of an internship program. Please contact for lic
 **Dhruba Saha**
 
 - GitHub: [@dhrubasaha001](https://github.com/dhrubasaha001)
-- LinkedIn: [Connect with me](https://www.linkedin.com/in/dhrubasaha001)
-- Email: your.email@example.com
+- LinkedIn: [Connect with me](https://www.linkedin.com/in/dhruba-saha-8a8108315)
+- Email: dhrubadeveloper@gmail.com
 
 ---
 
