@@ -240,21 +240,21 @@ Follow these steps to set up any of the projects locally:
 ```
 FUTURE_PE_01/
 │
-├── Task-1-AI-Content-Marketing-UGC-Ads/
+├── AI-Content-Marketing-UGC-Ads/
 │   ├── app.py                 # Flask application
 │   ├── templates/             # HTML templates
 │   ├── static/                # CSS, JS, images
 │   ├── requirements.txt       # Python dependencies
 │   └── README.md             # Project-specific docs
 │
-├── Task-2-AI-SEO-Blog-Content-Cluster-Generator/
+├── AI-SEO-Blog-Content-Cluster-Generator/
 │   ├── app.py
 │   ├── templates/
 │   ├── static/
 │   ├── requirements.txt
 │   └── README.md
 │
-├── Task-3-AI-Website-Copy-Generator-Local-Business/
+├── AI-Website-Copy-Generator-Local-Business/
 │   ├── app.py
 │   ├── templates/
 │   ├── static/
