@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI UGC Ad Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    
+    <div class="container">
+        <header class="hero">
+            <h1>AI <span class="gradient-text">UGC Ad</span> Generator</h1>
+            <p>Generate high-converting scripts, hooks, and captions for your brand in seconds.</p>
+        </header>
+
+        <div class="glass-panel form-container">
+            <form action="/generate" method="POST">
+                
+                <div class="form-group">
+                    <label for="product_name">Product Name</label>
+                    <input type="text" id="product_name" name="product_name" placeholder="e.g. Lumina Posture Corrector" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="category">Product Category</label>
+                    <input type="text" id="category" name="category" placeholder="e.g. Wellness" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem">Target Problem / Pain Point</label>
+                    <input type="text" id="problem" name="problem" placeholder="e.g. severe back pain from sitting" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="key_feature">Key Feature / Solution</label>
+                    <input type="text" id="key_feature" name="key_feature" placeholder="e.g. invisible under clothes and pulls shoulders back" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="platform">Platform</label>
+                        <select id="platform" name="platform">
+                            <option value="Instagram">Instagram Reels</option>
+                            <option value="TikTok">TikTok</option>
+                            <option value="YouTube Shorts">YouTube Shorts</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group half">
+                        <label for="tone">Brand Tone</label>
+                        <select id="tone" name="tone">
+                            <option value="D2C">D2C (Trendy & Native)</option>
+                            <option value="SaaS">SaaS (Professional & Value-driven)</option>
+                            <option value="Local Business">Local Business (Trusting & Authentic)</option>
+                            <option value="Creator">Creator Brand (Personality-led)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">Generate My Content Pack ✨</button>
+            </form>
+        </div>
+        
+        <footer>
+            <p>Built for AI Content Marketing using UGC Ads - Internship Project</p>
+        </footer>
+    </div>
+</body>
+</html>

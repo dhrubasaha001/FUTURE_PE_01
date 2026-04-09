@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Ad Content Pack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    
+    <div class="container container-large">
+        <header class="hero results-hero">
+            <h1>Your <span class="gradient-text">Content Pack</span> is Ready</h1>
+            <p>Product: <strong>{{ product_name }}</strong> | Platform: <strong>{{ platform }}</strong> | Tone: <strong>{{ tone }}</strong></p>
+        </header>
+
+        <div class="grid-layout">
+            <!-- Hooks Section -->
+            <div class="card glass-panel">
+                <div class="card-header">
+                    <h2>🎯 Scroll-Stopping Hooks</h2>
+                    <span class="badge">Crucial First 3s</span>
+                </div>
+                <div class="card-body">
+                    <ul class="item-list">
+                        {% for hook in hooks %}
+                            <li>
+                                <div class="copy-box">
+                                    <p>{{ hook }}</p>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Scripts Section -->
+            <div class="card glass-panel">
+                <div class="card-header">
+                    <h2>🎬 Full Video Scripts</h2>
+                    <span class="badge">UGC Frameworks</span>
+                </div>
+                <div class="card-body">
+                    {% for script in scripts %}
+                        <div class="script-box">
+                            <h4>Format: {{ script.framework }}</h4>
+                            <div class="copy-box">
+                                <p>{{ script.script }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Captions Section -->
+            <div class="card glass-panel full-width">
+                <div class="card-header">
+                    <h2>📝 Optimized Caption</h2>
+                    <span class="badge">{{ platform }}</span>
+                </div>
+                <div class="card-body">
+                    <div class="copy-box">
+                        <p style="white-space: pre-wrap;">{{ caption }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <a href="/" class="btn-secondary">← Generate Another</a>
+        </div>
+    </div>
+</body>
+</html>
