@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CopyForge — AI Website Copy for Local Businesses</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">CopyForge</span>
+    </div>
+    <p class="logo-tagline">AI copy for local businesses that actually sounds human</p>
+  </header>
+
+  <!-- MAIN LAYOUT -->
+  <main class="main-layout">
+
+    <!-- LEFT: FORM PANEL -->
+    <section class="form-panel">
+      <div class="panel-header">
+        <h2>Tell us about your business</h2>
+        <p>Fill in the details below and we'll generate full website copy in seconds.</p>
+      </div>
+
+      <div class="form-body">
+
+        <div class="field-group">
+          <label for="business_type">Business Type</label>
+          <input type="text" id="business_type" placeholder="e.g. Plumbing, Bakery, Law Firm, Yoga Studio" />
+        </div>
+
+        <div class="field-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" placeholder="e.g. Austin, TX or South Mumbai" />
+        </div>
+
+        <div class="field-group">
+          <label for="services">Services Offered</label>
+          <input type="text" id="services" placeholder="e.g. Pipe repair, leak detection, bathroom fitting" />
+          <span class="field-hint">Separate multiple services with commas</span>
+        </div>
+
+        <div class="field-group">
+          <label for="target_audience">Target Audience</label>
+          <input type="text" id="target_audience" placeholder="e.g. Homeowners, small business owners, young couples" />
+        </div>
+
+        <div class="field-group">
+          <label for="tone">Tone of Voice</label>
+          <div class="select-wrap">
+            <select id="tone">
+              <option value="professional">Professional & Authoritative</option>
+              <option value="friendly">Friendly & Approachable</option>
+              <option value="casual">Casual & Conversational</option>
+              <option value="urgent">Urgent & Action-Oriented</option>
+              <option value="luxury">Premium & Refined</option>
+              <option value="community">Warm & Community-Focused</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="generate-btn" id="generateBtn" onclick="generateCopy()">
+          <span class="btn-text">Generate Website Copy</span>
+          <span class="btn-icon">→</span>
+        </button>
+
+        <div class="error-box" id="errorBox" style="display:none;"></div>
+
+      </div>
+    </section>
+
+    <!-- RIGHT: OUTPUT PANEL -->
+    <section class="output-panel" id="outputPanel">
+
+      <!-- EMPTY STATE -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">✍️</div>
+        <h3>Your copy will appear here</h3>
+        <p>Fill in your business details on the left and hit <strong>Generate</strong> to create a full website copy set — homepage, about, services, and more.</p>
+        <ul class="empty-features">
+          <li>⚡ 5 complete copy sections</li>
+          <li>🎯 Conversion-focused writing</li>
+          <li>🗣️ Adapts to your tone</li>
+          <li>📍 Localised for your city</li>
+        </ul>
+      </div>
+
+      <!-- LOADING STATE -->
+      <div class="loading-state" id="loadingState" style="display:none;">
+        <div class="loader-ring"></div>
+        <p class="loading-label" id="loadingLabel">Crafting your copy…</p>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="results" id="results" style="display:none;">
+
+        <div class="results-header">
+          <h2>Your Website Copy</h2>
+          <button class="copy-all-btn" onclick="copyAll()">📋 Copy All</button>
+        </div>
+
+        <!-- HOMEPAGE -->
+        <div class="copy-card" id="card-homepage">
+          <div class="card-label">Homepage</div>
+          <h3 class="copy-headline" id="homepage-headline"></h3>
+          <p class="copy-sub" id="homepage-subheadline"></p>
+          <p class="copy-body" id="homepage-hero"></p>
+          <button class="copy-btn" onclick="copySection('card-homepage')">Copy</button>
+        </div>
+
+        <!-- ABOUT -->
+        <div class="copy-card" id="card-about">
+          <div class="card-label">About</div>
+          <h3 class="copy-headline" id="about-title"></h3>
+          <p class="copy-body" id="about-body"></p>
+          <button class="copy-btn" onclick="copySection('card-about')">Copy</button>
+        </div>
+
+        <!-- SERVICES -->
+        <div class="copy-card" id="card-services">
+          <div class="card-label">Services</div>
+          <h3 class="copy-headline" id="services-title"></h3>
+          <p class="copy-sub" id="services-intro"></p>
+          <ul class="services-list" id="services-list"></ul>
+          <button class="copy-btn" onclick="copySection('card-services')">Copy</button>
+        </div>
+
+        <!-- WHY CHOOSE US -->
+        <div class="copy-card" id="card-why">
+          <div class="card-label">Why Choose Us</div>
+          <h3 class="copy-headline" id="why-title"></h3>
+          <div class="why-grid" id="why-grid"></div>
+          <button class="copy-btn" onclick="copySection('card-why')">Copy</button>
+        </div>
+
+        <!-- CTA -->
+        <div class="copy-card cta-card" id="card-cta">
+          <div class="card-label">Call to Action</div>
+          <h3 class="copy-headline" id="cta-headline"></h3>
+          <p class="copy-body" id="cta-subtext"></p>
+          <div class="cta-button-preview" id="cta-button"></div>
+          <p class="copy-secondary" id="cta-secondary"></p>
+          <button class="copy-btn" onclick="copySection('card-cta')">Copy</button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>CopyForge — Built with FastAPI + AI. No fluff, just copy that converts.</p>
+  </footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
